@@ -1,0 +1,23 @@
+{
+  "name": "Calculatrice",
+  "short_name": "Calculatrice",
+  "description": "Calculatrice",
+  "start_url": "/Calculatrice2540/calculatrice-2.html",
+  "scope": "/Calculatrice2540/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='32' fill='%230a0a0a'/%3E%3Crect x='14' y='14' width='164' height='164' rx='24' fill='%23111111' stroke='%23cc0000' stroke-width='3'/%3E%3Crect x='28' y='28' width='136' height='44' rx='10' fill='%230d0d0d' stroke='%23330000' stroke-width='2'/%3E%3Ctext x='152' y='62' font-family='monospace' font-size='32' fill='%23ff2222' text-anchor='end'%3E0%3C/text%3E%3Crect x='28' y='82' width='28' height='24' rx='5' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='66' y='82' width='28' height='24' rx='5' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='104' y='82' width='28' height='24' rx='5' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='142' y='82' width='28' height='24' rx='5' fill='%23220000' stroke='%23cc0000' stroke-width='1'/%3E%3Crect x='28' y='116' width='28' height='24' rx='5' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='66' y='116' width='28' height='24' rx='5' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='104' y='116' width='28' height='24' rx='5' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='142' y='116' width='28' height='24' rx='5' fill='%23220000' stroke='%23cc0000' stroke-width='1'/%3E%3Crect x='28' y='150' width='66' height='24' rx='5' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='104' y='150' width='28' height='24' rx='5' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='142' y='150' width='28' height='24' rx='5' fill='%23cc0000' stroke='%23ff2222' stroke-width='1'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='80' fill='%230a0a0a'/%3E%3Crect x='40' y='40' width='432' height='432' rx='60' fill='%23111111' stroke='%23cc0000' stroke-width='6'/%3E%3Crect x='80' y='80' width='352' height='110' rx='20' fill='%230d0d0d' stroke='%23330000' stroke-width='3'/%3E%3Ctext x='400' y='155' font-family='monospace' font-size='80' fill='%23ff2222' text-anchor='end'%3E0%3C/text%3E%3Crect x='80' y='210' width='72' height='60' rx='10' fill='%231a1a1a' stroke='%23333' stroke-width='2'/%3E%3Crect x='180' y='210' width='72' height='60' rx='10' fill='%231a1a1a' stroke='%23333' stroke-width='2'/%3E%3Crect x='280' y='210' width='72' height='60' rx='10' fill='%231a1a1a' stroke='%23333' stroke-width='2'/%3E%3Crect x='380' y='210' width='72' height='60' rx='10' fill='%23220000' stroke='%23cc0000' stroke-width='2'/%3E%3Crect x='80' y='290' width='72' height='60' rx='10' fill='%231a1a1a' stroke='%23333' stroke-width='2'/%3E%3Crect x='180' y='290' width='72' height='60' rx='10' fill='%231a1a1a' stroke='%23333' stroke-width='2'/%3E%3Crect x='280' y='290' width='72' height='60' rx='10' fill='%231a1a1a' stroke='%23333' stroke-width='2'/%3E%3Crect x='380' y='290' width='72' height='60' rx='10' fill='%23220000' stroke='%23cc0000' stroke-width='2'/%3E%3Crect x='80' y='370' width='172' height='60' rx='10' fill='%231a1a1a' stroke='%23333' stroke-width='2'/%3E%3Crect x='280' y='370' width='72' height='60' rx='10' fill='%231a1a1a' stroke='%23333' stroke-width='2'/%3E%3Crect x='380' y='370' width='72' height='60' rx='10' fill='%23cc0000' stroke='%23ff2222' stroke-width='2'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
