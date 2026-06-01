@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculatrice</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230a0a0a'/%3E%3Crect x='8' y='8' width='84' height='84' rx='14' fill='%23111111' stroke='%23cc0000' stroke-width='2'/%3E%3Crect x='16' y='16' width='68' height='22' rx='6' fill='%230d0d0d' stroke='%23330000' stroke-width='1'/%3E%3Ctext x='78' y='33' font-family='monospace' font-size='16' fill='%23ff2222' text-anchor='end'%3E0%3C/text%3E%3Crect x='16' y='44' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='34' y='44' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='52' y='44' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='70' y='44' width='14' height='12' rx='3' fill='%23220000' stroke='%23cc0000' stroke-width='1'/%3E%3Crect x='16' y='60' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='34' y='60' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='52' y='60' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='70' y='60' width='14' height='12' rx='3' fill='%23220000' stroke='%23cc0000' stroke-width='1'/%3E%3Crect x='16' y='76' width='32' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='52' y='76' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='70' y='76' width='14' height='12' rx='3' fill='%23cc0000' stroke='%23ff2222' stroke-width='1'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230a0a0a'/%3E%3Crect x='8' y='8' width='84' height='84' rx='14' fill='%23111111' stroke='%23cc0000' stroke-width='2'/%3E%3Crect x='16' y='16' width='68' height='22' rx='6' fill='%230d0d0d' stroke='%23330000' stroke-width='1'/%3E%3Ctext x='78' y='33' font-family='monospace' font-size='16' fill='%23ff2222' text-anchor='end'%3E0%3C/text%3E%3Crect x='16' y='44' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='34' y='44' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='52' y='44' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='70' y='44' width='14' height='12' rx='3' fill='%23220000' stroke='%23cc0000' stroke-width='1'/%3E%3Crect x='16' y='60' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='34' y='60' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='52' y='60' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='70' y='60' width='14' height='12' rx='3' fill='%23220000' stroke='%23cc0000' stroke-width='1'/%3E%3Crect x='16' y='76' width='32' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='52' y='76' width='14' height='12' rx='3' fill='%231a1a1a' stroke='%23333' stroke-width='1'/%3E%3Crect x='70' y='76' width='14' height='12' rx='3' fill='%23cc0000' stroke='%23ff2222' stroke-width='1'/%3E%3C/svg%3E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Calculatrice">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="manifest" href="manifest.json">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #111111;
+    --bg3: #1a1a1a;
+    --red: #cc0000;
+    --red2: #ff2222;
+    --red3: #ff6666;
+    --dim: #333333;
+    --text: #eeeeee;
+    --muted: #666666;
+    --border: #2a2a2a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ===== CALCULATRICE ===== */
+  #calc-screen {
+    width: 340px;
+    background: var(--bg2);
+    border: 1px solid var(--dim);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 0 40px rgba(200,0,0,0.08), 0 20px 60px rgba(0,0,0,0.8);
+  }
+
+  .calc-display {
+    background: #0d0d0d;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    text-align: right;
+  }
+
+  .calc-display .sub {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    min-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  .calc-display .main {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 36px;
+    color: var(--text);
+    letter-spacing: 2px;
+  }
+
+  .calc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .calc-btn {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 18px 0;
+    cursor: pointer;
+    transition: all 0.12s ease;
+    user-select: none;
+  }
+
+  .calc-btn:hover { background: #222; border-color: var(--dim); }
+  .calc-btn:active { transform: scale(0.94); background: #1e1e1e; }
+
+  .calc-btn.op { color: var(--red3); }
+  .calc-btn.eq {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
+    font-size: 24px;
+  }
+  .calc-btn.eq:hover { background: var(--red2); }
+  .calc-btn.zero { grid-column: span 2; }
+  .calc-btn.clr { color: var(--red3); }
+
+  /* ===== OVERLAY MOT DE PASSE ===== */
+  #pw-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.97);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+
+  #pw-screen.show { display: flex; }
+
+  .pw-box {
+    width: 360px;
+    background: var(--bg2);
+    border: 1px solid var(--red);
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: 0 0 60px rgba(200,0,0,0.2);
+    text-align: center;
+  }
+
+  .pw-box .lock-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  .pw-box h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--red3);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .pw-box p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .pw-input {
+    width: 100%;
+    background: #0d0d0d;
+    border: 1px solid var(--dim);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 16px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    outline: none;
+    letter-spacing: 3px;
+    transition: border-color 0.2s;
+  }
+
+  .pw-input:focus { border-color: var(--red); }
+
+  .pw-btn {
+    width: 100%;
+    background: var(--red);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-transform: uppercase;
+  }
+
+  .pw-btn:hover { background: var(--red2); }
+
+  .pw-error {
+    color: var(--red3);
+    font-size: 13px;
+    margin-top: 10px;
+    min-height: 18px;
+  }
+
+  /* ===== COFFRE PRINCIPAL ===== */
+  #vault-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 50;
+    flex-direction: column;
+  }
+
+  #vault-screen.show { display: flex; }
+
+  /* Header */
+  .vault-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .vault-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red3);
+  }
+
+  .vault-header .logo span { color: var(--muted); font-size: 12px; letter-spacing: 2px; }
+
+  .header-actions { display: flex; gap: 10px; align-items: center; }
+
+  .hbtn {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-transform: uppercase;
+  }
+
+  .hbtn:hover { border-color: var(--red); color: var(--red3); }
+  .hbtn.red { border-color: var(--red); color: var(--red3); }
+  .hbtn.red:hover { background: rgba(200,0,0,0.15); }
+
+  /* Body layout */
+  .vault-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 25%;
+    min-width: 200px;
+    max-width: 280px;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sidebar-top {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+  }
+
+  .sidebar-top input {
+    flex: 1;
+    background: #0d0d0d;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    padding: 8px 12px;
+    outline: none;
+  }
+
+  .sidebar-top input:focus { border-color: var(--red); }
+
+  .add-cat-btn {
+    background: var(--red);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 18px;
+    width: 36px;
+    cursor: pointer;
+    transition: background 0.15s;
+    flex-shrink: 0;
+  }
+
+  .add-cat-btn:hover { background: var(--red2); }
+
+  .cat-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+  }
+
+  .cat-list::-webkit-scrollbar { width: 4px; }
+  .cat-list::-webkit-scrollbar-track { background: transparent; }
+  .cat-list::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 4px; }
+
+  .cat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: 1px solid transparent;
+    margin-bottom: 4px;
+    position: relative;
+  }
+
+  .cat-item:hover { background: var(--bg3); }
+  .cat-item.active { background: rgba(200,0,0,0.12); border-color: rgba(200,0,0,0.3); }
+
+  .cat-icon { font-size: 20px; flex-shrink: 0; }
+
+  .cat-info { flex: 1; min-width: 0; }
+  .cat-name {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cat-count { font-size: 11px; color: var(--muted); }
+
+  .cat-actions { display: none; gap: 4px; }
+  .cat-item:hover .cat-actions { display: flex; }
+
+  .cat-action-btn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: color 0.15s;
+  }
+
+  .cat-action-btn:hover { color: var(--red3); }
+
+  /* Main content */
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .content-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .content-toolbar .cat-title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red3);
+    flex: 1;
+  }
+
+  .toolbar-btn {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 7px 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .toolbar-btn:hover { border-color: var(--red); color: var(--red3); }
+  .toolbar-btn.active { border-color: var(--red); color: var(--red3); background: rgba(200,0,0,0.1); }
+
+  .search-box {
+    background: #0d0d0d;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    padding: 7px 12px;
+    outline: none;
+    width: 180px;
+    transition: border-color 0.2s;
+  }
+
+  .search-box:focus { border-color: var(--red); }
+
+  .file-grid {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 14px;
+    align-content: start;
+  }
+
+  .file-grid::-webkit-scrollbar { width: 4px; }
+  .file-grid::-webkit-scrollbar-track { background: transparent; }
+  .file-grid::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 4px; }
+
+  .file-item {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+    position: relative;
+    user-select: none;
+  }
+
+  .file-item:hover { border-color: var(--dim); background: var(--bg3); }
+
+  .file-item .fav-star {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 14px;
+    opacity: 0.3;
+    transition: opacity 0.15s;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: gold;
+    padding: 0;
+  }
+
+  .file-item .fav-star.active { opacity: 1; }
+  .file-item:hover .fav-star { opacity: 0.7; }
+
+  .file-icon { font-size: 36px; margin-bottom: 10px; display: block; }
+
+  .file-name {
+    font-size: 12px;
+    color: var(--text);
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+  }
+
+  .file-meta { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+  .file-item .del-btn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--red3);
+    padding: 0;
+  }
+
+  .file-item:hover .del-btn { opacity: 0.7; }
+
+  .empty-state {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+
+  .empty-state .e-icon { font-size: 48px; margin-bottom: 12px; opacity: 0.3; }
+  .empty-state p { font-size: 14px; letter-spacing: 1px; }
+
+  /* Viewer overlay */
+  #viewer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #viewer.show { display: flex; }
+
+  .viewer-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: rgba(10,10,10,0.9);
+    border-bottom: 1px solid var(--border);
+    z-index: 201;
+  }
+
+  .viewer-title { font-size: 15px; font-weight: 600; letter-spacing: 1px; color: var(--red3); }
+
+  .viewer-close {
+    background: var(--red);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 16px;
+    cursor: pointer;
+    letter-spacing: 1px;
+  }
+
+  .viewer-content {
+    margin-top: 60px;
+    max-width: 90vw;
+    max-height: calc(90vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .viewer-content img, .viewer-content video {
+    max-width: 100%;
+    max-height: calc(90vh - 80px);
+    border-radius: 8px;
+    object-fit: contain;
+  }
+
+  .viewer-content iframe {
+    width: 80vw;
+    height: calc(90vh - 80px);
+    border: none;
+    border-radius: 8px;
+    background: #fff;
+  }
+
+  .viewer-content .text-view {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    max-width: 700px;
+    width: 80vw;
+    max-height: calc(90vh - 100px);
+    overflow-y: auto;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+    white-space: pre-wrap;
+  }
+
+  /* Modal générique */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 300;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-overlay.show { display: flex; }
+
+  .modal-box {
+    background: var(--bg2);
+    border: 1px solid var(--red);
+    border-radius: 14px;
+    padding: 30px 28px;
+    width: 360px;
+    box-shadow: 0 0 40px rgba(200,0,0,0.15);
+  }
+
+  .modal-box h3 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--red3);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .modal-input {
+    width: 100%;
+    background: #0d0d0d;
+    border: 1px solid var(--dim);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .modal-input:focus { border-color: var(--red); }
+
+  .modal-actions { display: flex; gap: 10px; margin-top: 6px; }
+
+  .modal-btn {
+    flex: 1;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 11px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-transform: uppercase;
+  }
+
+  .modal-btn.confirm { background: var(--red); border-color: var(--red); color: #fff; }
+  .modal-btn.confirm:hover { background: var(--red2); }
+  .modal-btn:hover { border-color: var(--dim); }
+
+  /* Corbeille */
+  .trash-section {
+    padding: 10px 20px;
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  /* Toast */
+  #toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--bg2);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--red3);
+    z-index: 999;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+  }
+
+  #toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* Setup screen */
+  #setup-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.97);
+    align-items: center;
+    justify-content: center;
+    z-index: 150;
+  }
+
+  #setup-screen.show { display: flex; }
+
+  .setup-box {
+    width: 380px;
+    background: var(--bg2);
+    border: 1px solid var(--red);
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: 0 0 60px rgba(200,0,0,0.2);
+    text-align: center;
+  }
+
+  .setup-box h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--red3);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .setup-box p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .setup-step { display: none; }
+  .setup-step.active { display: block; }
+
+  .step-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+
+  /* Inactivity timer */
+  .inactivity-bar {
+    height: 2px;
+    background: var(--border);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+  }
+
+  .inactivity-fill {
+    height: 100%;
+    background: var(--red);
+    transition: width 1s linear;
+  }
+
+  /* Scrollbar global */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 4px; }
+
+  /* Note editor */
+  .note-editor {
+    width: 80vw;
+    height: calc(90vh - 100px);
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 20px;
+    resize: none;
+    outline: none;
+  }
+
+  .note-editor:focus { border-color: var(--red); }
+
+  .viewer-save-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--red);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    z-index: 202;
+  }
+
+  /* Mobile FAB */
+  .fab-add {
+    display: none;
+    position: fixed;
+    bottom: 80px; right: 20px;
+    width: 56px; height: 56px;
+    background: var(--red);
+    border: none; border-radius: 50%;
+    color: #fff; font-size: 28px;
+    cursor: pointer; z-index: 55;
+    box-shadow: 0 4px 20px rgba(200,0,0,0.5);
+    align-items: center; justify-content: center;
+    transition: transform 0.15s;
+  }
+  .fab-add:active { transform: scale(0.92); }
+
+  /* Mobile bottom nav */
+  .mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    z-index: 54; padding: 6px 0 10px;
+  }
+  .mobile-nav-inner { display: flex; justify-content: space-around; align-items: center; }
+  .mobile-nav-btn {
+    background: none; border: none;
+    color: var(--muted);
+    font-size: 10px; font-family: 'Rajdhani', sans-serif;
+    font-weight: 600; letter-spacing: 0.5px;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 2px;
+    cursor: pointer; padding: 4px 10px;
+    border-radius: 8px; transition: color 0.15s;
+  }
+  .mobile-nav-btn .nav-icon { font-size: 20px; }
+  .mobile-nav-btn:active { color: var(--red3); }
+
+  /* Sidebar overlay */
+  .sidebar-overlay {
+    display: none; position: fixed;
+    inset: 0; background: rgba(0,0,0,0.6); z-index: 48;
+  }
+  .sidebar-overlay.show { display: block; }
+
+  @media (max-width: 700px) {
+    .vault-header { padding: 10px 14px; }
+    .vault-header .logo { font-size: 14px; letter-spacing: 2px; }
+    .vault-header .logo span { display: none; }
+    .header-actions { display: none; }
+
+    .sidebar {
+      position: fixed;
+      top: 0; left: -100%; bottom: 0;
+      width: 75vw !important; max-width: 280px;
+      z-index: 49; transition: left 0.25s ease;
+      padding-bottom: 80px;
+    }
+    .sidebar.open { left: 0; }
+
+    .vault-body { flex-direction: column; }
+    .main-content { width: 100%; }
+
+    .content-toolbar { flex-wrap: wrap; gap: 8px; padding: 10px 12px; }
+    .content-toolbar .cat-title { font-size: 15px; flex: 1; }
+    .search-box { width: 100% !important; order: 10; flex: 1 1 100%; }
+    #fav-filter-btn, .toolbar-btn[onclick*="sortFiles"], #add-file-btn { display: none !important; }
+
+    .file-grid { padding: 12px; padding-bottom: 100px; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; }
+
+    .fab-add { display: flex; }
+    .mobile-bottom-nav { display: block; }
+
+    .modal-box { width: 92vw; padding: 24px 18px; }
+    .setup-box { width: 92vw; padding: 28px 20px; }
+    .pw-box { width: 92vw; padding: 28px 20px; }
+    .note-editor { width: 96vw; }
+    .viewer-content iframe { width: 96vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== CALCULATRICE ===== -->
+<div id="calc-screen">
+  <div class="calc-display">
+    <div class="sub" id="calc-sub"></div>
+    <div class="main" id="calc-main">0</div>
+  </div>
+  <div class="calc-grid">
+    <button class="calc-btn clr" onclick="calcAction('C')">C</button>
+    <button class="calc-btn op" onclick="calcAction('+/-')">+/-</button>
+    <button class="calc-btn op" onclick="calcAction('%')">%</button>
+    <button class="calc-btn op" onclick="calcAction('/')">÷</button>
+    <button class="calc-btn" onclick="calcAction('7')">7</button>
+    <button class="calc-btn" onclick="calcAction('8')">8</button>
+    <button class="calc-btn" onclick="calcAction('9')">9</button>
+    <button class="calc-btn op" onclick="calcAction('*')">×</button>
+    <button class="calc-btn" onclick="calcAction('4')">4</button>
+    <button class="calc-btn" onclick="calcAction('5')">5</button>
+    <button class="calc-btn" onclick="calcAction('6')">6</button>
+    <button class="calc-btn op" onclick="calcAction('-')">−</button>
+    <button class="calc-btn" onclick="calcAction('1')">1</button>
+    <button class="calc-btn" onclick="calcAction('2')">2</button>
+    <button class="calc-btn" onclick="calcAction('3')">3</button>
+    <button class="calc-btn op" onclick="calcAction('+')">+</button>
+    <button class="calc-btn zero" onclick="calcAction('0')">0</button>
+    <button class="calc-btn" onclick="calcAction('.')">.</button>
+    <button class="calc-btn eq" onclick="calcAction('=')">=</button>
+  </div>
+</div>
+
+<!-- ===== SETUP ===== -->
+<div id="setup-screen">
+  <div class="setup-box">
+    <div style="font-size:40px;margin-bottom:12px;">🔐</div>
+    <h2>Configuration</h2>
+    <p>Première utilisation — configurez votre accès secret</p>
+
+    <div class="setup-step active" id="step1">
+      <div class="step-label">Étape 1/2 — Combinaison secrète (chiffres uniquement)</div>
+      <input class="pw-input" id="setup-combo" type="password" inputmode="numeric" placeholder="Ex: 1337" maxlength="20">
+      <input class="pw-input" id="setup-combo2" type="password" inputmode="numeric" placeholder="Confirmez la combinaison" maxlength="20">
+      <button class="pw-btn" onclick="setupStep1()">SUIVANT →</button>
+      <div class="pw-error" id="setup-err1"></div>
+    </div>
+
+    <div class="setup-step" id="step2">
+      <div class="step-label">Étape 2/2 — Mot de passe du coffre</div>
+      <input class="pw-input" id="setup-pw" type="password" placeholder="Mot de passe (min. 8 car.)">
+      <input class="pw-input" id="setup-pw2" type="password" placeholder="Confirmez le mot de passe">
+      <button class="pw-btn" onclick="setupStep2()">CRÉER LE COFFRE</button>
+      <div class="pw-error" id="setup-err2"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MOT DE PASSE ===== -->
+<div id="pw-screen">
+  <div class="pw-box">
+    <div class="lock-icon">🔒</div>
+    <h2>Accès Coffre</h2>
+    <p>Entrez votre mot de passe pour déverrouiller</p>
+    <input class="pw-input" id="pw-input" type="password" placeholder="Mot de passe" onkeydown="if(event.key==='Enter')checkPw()">
+    <button class="pw-btn" onclick="checkPw()">DÉVERROUILLER</button>
+    <div class="pw-error" id="pw-error"></div>
+  </div>
+</div>
+
+<!-- ===== COFFRE ===== -->
+<div id="vault-screen">
+  <div class="vault-header">
+    <div class="logo">🔴 COFFRE-FORT <span>SÉCURISÉ</span></div>
+    <div class="header-actions">
+      <button class="hbtn" onclick="showExport()">📤 Export</button>
+      <button class="hbtn" onclick="showImport()">📥 Import</button>
+      <button class="hbtn" onclick="showTrash()">🗑️ Corbeille</button>
+      <button class="hbtn red" onclick="lockVault()">🔒 Verrouiller</button>
+    </div>
+  </div>
+  <div class="vault-body">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-top">
+        <input type="text" id="new-cat-name" placeholder="Nouvelle catégorie..." onkeydown="if(event.key==='Enter')addCategory()">
+        <button class="add-cat-btn" onclick="addCategory()" title="Ajouter">+</button>
+      </div>
+      <div class="cat-list" id="cat-list"></div>
+    </div>
+    <!-- Content -->
+    <div class="main-content">
+      <div class="content-toolbar">
+        <div class="cat-title" id="content-title">— Sélectionnez une catégorie</div>
+        <input class="search-box" type="text" placeholder="🔍 Rechercher..." id="search-input" oninput="renderFiles()">
+        <button class="toolbar-btn" id="fav-filter-btn" onclick="toggleFavFilter()">⭐ Favoris</button>
+        <button class="toolbar-btn" onclick="sortFiles('name')">🔤 Nom</button>
+        <button class="toolbar-btn" onclick="sortFiles('date')">📅 Date</button>
+        <button class="toolbar-btn" id="add-file-btn" onclick="addFile()" style="display:none">+ Ajouter</button>
+      </div>
+      <div class="file-grid" id="file-grid">
+        <div class="empty-state">
+          <div class="e-icon">🗂️</div>
+          <p>Sélectionnez une catégorie</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="inactivity-bar"><div class="inactivity-fill" id="inactivity-fill" style="width:100%"></div></div>
+</div>
+
+<!-- Mobile FAB -->
+<button class="fab-add" id="fab-add" onclick="addFile()">+</button>
+
+<!-- Sidebar overlay -->
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- Mobile bottom nav -->
+<div class="mobile-bottom-nav">
+  <div class="mobile-nav-inner">
+    <button class="mobile-nav-btn" onclick="toggleSidebar()"><span class="nav-icon">☰</span>Catégories</button>
+    <button class="mobile-nav-btn" onclick="toggleMobileFav()"><span class="nav-icon">⭐</span>Favoris</button>
+    <button class="mobile-nav-btn" onclick="sortFiles('name')"><span class="nav-icon">🔤</span>Nom</button>
+    <button class="mobile-nav-btn" onclick="sortFiles('date')"><span class="nav-icon">📅</span>Date</button>
+    <button class="mobile-nav-btn" onclick="showMobileMenu()"><span class="nav-icon">⋯</span>Menu</button>
+  </div>
+</div>
+
+<!-- ===== VIEWER ===== -->
+<div id="viewer">
+  <div class="viewer-toolbar">
+    <div class="viewer-title" id="viewer-title"></div>
+    <button class="viewer-close" onclick="closeViewer()">✕ FERMER</button>
+  </div>
+  <div class="viewer-content" id="viewer-content"></div>
+</div>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-box">
+    <h3 id="modal-title">Action</h3>
+    <div id="modal-body"></div>
+    <div class="modal-actions">
+      <button class="modal-btn" onclick="closeModal()">Annuler</button>
+      <button class="modal-btn confirm" id="modal-confirm" onclick="modalConfirm()">Confirmer</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ===== CRYPTO HELPERS =====
+async function deriveKey(password, salt) {
+  const enc = new TextEncoder();
+  const keyMat = await crypto.subtle.importKey('raw', enc.encode(password), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+    keyMat, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']
+  );
+}
+
+async function encrypt(data, password) {
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const key = await deriveKey(password, salt);
+  const enc = new TextEncoder();
+  const cipher = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, enc.encode(data));
+  const result = new Uint8Array(salt.length + iv.length + cipher.byteLength);
+  result.set(salt, 0); result.set(iv, 16); result.set(new Uint8Array(cipher), 28);
+  return btoa(String.fromCharCode(...result));
+}
+
+async function decrypt(b64, password) {
+  try {
+    const raw = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+    const salt = raw.slice(0, 16), iv = raw.slice(16, 28), cipher = raw.slice(28);
+    const key = await deriveKey(password, salt);
+    const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, cipher);
+    return new TextDecoder().decode(plain);
+  } catch { return null; }
+}
+
+async function hashPw(pw) {
+  const enc = new TextEncoder();
+  const buf = await crypto.subtle.digest('SHA-256', enc.encode(pw + 'coffre_salt_v1'));
+  return btoa(String.fromCharCode(...new Uint8Array(buf)));
+}
+
+// ===== STATE =====
+let vaultPw = null;
+let currentCat = null;
+let favFilterOn = false;
+let sortMode = 'date';
+let inactivityTimer = null;
+let inactivitySeconds = 300; // 5 min
+let inactivityLeft = inactivitySeconds;
+let inactivityInterval = null;
+let modalAction = null;
+let trashMode = false;
+let currentNoteId = null;
+
+// ===== INDEXEDDB =====
+let db;
+async function initDB() {
+  return new Promise((res, rej) => {
+    const req = indexedDB.open('CoffreVault', 2);
+    req.onupgradeneeded = e => {
+      const d = e.target.result;
+      if (!d.objectStoreNames.contains('files')) d.createObjectStore('files', { keyPath: 'id' });
+      if (!d.objectStoreNames.contains('trash')) d.createObjectStore('trash', { keyPath: 'id' });
+    };
+    req.onsuccess = e => { db = e.target.result; res(); };
+    req.onerror = () => rej();
+  });
+}
+
+async function dbPut(store, obj) {
+  return new Promise((res, rej) => {
+    const tx = db.transaction(store, 'readwrite');
+    tx.objectStore(store).put(obj).onsuccess = () => res();
+    tx.onerror = () => rej();
+  });
+}
+
+async function dbGet(store, id) {
+  return new Promise((res) => {
+    const tx = db.transaction(store, 'readonly');
+    const req = tx.objectStore(store).get(id);
+    req.onsuccess = () => res(req.result);
+  });
+}
+
+async function dbDelete(store, id) {
+  return new Promise((res) => {
+    const tx = db.transaction(store, 'readwrite');
+    tx.objectStore(store).delete(id).onsuccess = () => res();
+  });
+}
+
+async function dbGetAll(store) {
+  return new Promise((res) => {
+    const tx = db.transaction(store, 'readonly');
+    const req = tx.objectStore(store).getAll();
+    req.onsuccess = () => res(req.result || []);
+  });
+}
+
+// ===== CALCULATRICE =====
+let calcExpr = '', calcResult = false;
+
+function calcAction(val) {
+  const main = document.getElementById('calc-main');
+  const sub = document.getElementById('calc-sub');
+
+  if (val === 'C') { calcExpr = ''; calcResult = false; main.textContent = '0'; sub.textContent = ''; return; }
+
+  if (val === '=') {
+    // Vérif combinaison secrète
+    const combo = localStorage.getItem('vault_combo');
+    if (combo && calcExpr === combo) {
+      calcExpr = ''; main.textContent = '0'; sub.textContent = '';
+      openVaultAccess(); return;
+    }
+    // Calcul normal
+    try {
+      let expr = calcExpr.replace(/×/g,'*').replace(/÷/g,'/');
+      let res = eval(expr);
+      if (isNaN(res) || !isFinite(res)) { main.textContent = 'Erreur'; calcExpr = ''; return; }
+      res = parseFloat(res.toFixed(10));
+      sub.textContent = calcExpr + ' =';
+      main.textContent = res;
+      calcExpr = String(res);
+      calcResult = true;
+    } catch { main.textContent = 'Erreur'; calcExpr = ''; }
+    return;
+  }
+
+  if (val === '+/-') {
+    if (calcExpr.startsWith('-')) calcExpr = calcExpr.slice(1);
+    else calcExpr = '-' + calcExpr;
+    main.textContent = calcExpr || '0'; return;
+  }
+
+  if (val === '%') {
+    try { let r = eval(calcExpr) / 100; calcExpr = String(r); main.textContent = calcExpr; } catch {}
+    return;
+  }
+
+  if (calcResult && !isNaN(val)) { calcExpr = ''; calcResult = false; }
+  calcExpr += val;
+  main.textContent = calcExpr;
+}
+
+// Clavier physique pour la calculatrice
+document.addEventListener('keydown', e => {
+  if (document.getElementById('vault-screen').classList.contains('show')) return;
+  if (document.getElementById('pw-screen').classList.contains('show')) return;
+  if (document.getElementById('setup-screen').classList.contains('show')) return;
+  const map = {'0':'0','1':'1','2':'2','3':'3','4':'4','5':'5','6':'6','7':'7','8':'8','9':'9','+':'+','-':'-','*':'*','/':'/','Enter':'=','=':'=','Backspace':'C','.':'.'};
+  if (map[e.key]) { e.preventDefault(); calcAction(map[e.key]); }
+});
+
+// ===== SETUP =====
+let tempCombo = '';
+
+function checkFirstTime() {
+  const combo = localStorage.getItem('vault_combo');
+  if (!combo) document.getElementById('setup-screen').classList.add('show');
+}
+
+function setupStep1() {
+  const c1 = document.getElementById('setup-combo').value.trim();
+  const c2 = document.getElementById('setup-combo2').value.trim();
+  const err = document.getElementById('setup-err1');
+  if (!c1) { err.textContent = 'Entrez une combinaison'; return; }
+  if (!/^\d+$/.test(c1)) { err.textContent = 'Chiffres uniquement'; return; }
+  if (c1.length < 3) { err.textContent = 'Minimum 3 chiffres'; return; }
+  if (c1 !== c2) { err.textContent = 'Les combinaisons ne correspondent pas'; return; }
+  tempCombo = c1;
+  document.getElementById('step1').classList.remove('active');
+  document.getElementById('step2').classList.add('active');
+}
+
+async function setupStep2() {
+  const p1 = document.getElementById('setup-pw').value;
+  const p2 = document.getElementById('setup-pw2').value;
+  const err = document.getElementById('setup-err2');
+  if (p1.length < 8) { err.textContent = 'Minimum 8 caractères'; return; }
+  if (p1 !== p2) { err.textContent = 'Les mots de passe ne correspondent pas'; return; }
+  const h = await hashPw(p1);
+  localStorage.setItem('vault_combo', tempCombo);
+  localStorage.setItem('vault_pw_hash', h);
+  // Catégories par défaut
+  const cats = [
+    { id: 'cat_images', name: 'Images', icon: '🖼️', files: [] },
+    { id: 'cat_videos', name: 'Vidéos', icon: '🎬', files: [] },
+    { id: 'cat_docs', name: 'Documents', icon: '📁', files: [] },
+    { id: 'cat_notes', name: 'Notes', icon: '📝', files: [] },
+  ];
+  const encCats = await encrypt(JSON.stringify(cats), p1);
+  localStorage.setItem('vault_cats', encCats);
+  document.getElementById('setup-screen').classList.remove('show');
+  toast('Coffre créé avec succès ! 🔐');
+}
+
+// ===== ACCÈS COFFRE =====
+function openVaultAccess() {
+  document.getElementById('pw-input').value = '';
+  document.getElementById('pw-error').textContent = '';
+  document.getElementById('pw-screen').classList.add('show');
+  setTimeout(() => document.getElementById('pw-input').focus(), 100);
+}
+
+async function checkPw() {
+  const pw = document.getElementById('pw-input').value;
+  const stored = localStorage.getItem('vault_pw_hash');
+  const h = await hashPw(pw);
+  if (h !== stored) {
+    document.getElementById('pw-error').textContent = 'Mot de passe incorrect';
+    document.getElementById('pw-input').value = '';
+    return;
+  }
+  vaultPw = pw;
+  document.getElementById('pw-screen').classList.remove('show');
+  await openVault();
+}
+
+async function openVault() {
+  await loadCategories();
+  document.getElementById('vault-screen').classList.add('show');
+  resetInactivity();
+  startInactivityTimer();
+}
+
+function lockVault() {
+  vaultPw = null;
+  currentCat = null;
+  trashMode = false;
+  document.getElementById('vault-screen').classList.remove('show');
+  stopInactivityTimer();
+  toast('Coffre verrouillé 🔒');
+}
+
+// ===== CATÉGORIES =====
+let categories = [];
+
+async function loadCategories() {
+  const enc = localStorage.getItem('vault_cats');
+  if (!enc) return;
+  const json = await decrypt(enc, vaultPw);
+  if (json) categories = JSON.parse(json);
+  renderCategories();
+}
+
+async function saveCategories() {
+  const enc = await encrypt(JSON.stringify(categories), vaultPw);
+  localStorage.setItem('vault_cats', enc);
+}
+
+function renderCategories() {
+  const list = document.getElementById('cat-list');
+  list.innerHTML = '';
+  categories.forEach(cat => {
+    const el = document.createElement('div');
+    el.className = 'cat-item' + (currentCat === cat.id ? ' active' : '');
+    el.innerHTML = `
+      <span class="cat-icon">${cat.icon}</span>
+      <div class="cat-info">
+        <div class="cat-name">${cat.name}</div>
+        <div class="cat-count">${(cat.files||[]).length} fichier(s)</div>
+      </div>
+      <div class="cat-actions">
+        <button class="cat-action-btn" onclick="renameCat('${cat.id}',event)" title="Renommer">✏️</button>
+        <button class="cat-action-btn" onclick="deleteCat('${cat.id}',event)" title="Supprimer">🗑️</button>
+      </div>
+    `;
+    el.addEventListener('click', () => selectCat(cat.id));
+    list.appendChild(el);
+  });
+}
+
+function selectCat(id) {
+  currentCat = id;
+  trashMode = false;
+  // Close sidebar on mobile
+  if (window.innerWidth <= 700) {
+    document.querySelector('.sidebar').classList.remove('open');
+    document.getElementById('sidebar-overlay').classList.remove('show');
+  }
+  checkMobile();
+  favFilterOn = false;
+  document.getElementById('fav-filter-btn').classList.remove('active');
+  const cat = categories.find(c => c.id === id);
+  document.getElementById('content-title').textContent = cat ? `${cat.icon} ${cat.name}` : '';
+  document.getElementById('add-file-btn').style.display = '';
+  renderCategories();
+  renderFiles();
+  resetInactivity();
+}
+
+async function addCategory() {
+  const input = document.getElementById('new-cat-name');
+  const name = input.value.trim();
+  if (!name) return;
+  const icons = ['📂','🗂️','💼','📦','🎯','🎨','🎵','🔖'];
+  const icon = icons[Math.floor(Math.random() * icons.length)];
+  const cat = { id: 'cat_' + Date.now(), name, icon, files: [] };
+  categories.push(cat);
+  await saveCategories();
+  input.value = '';
+  renderCategories();
+  toast('Catégorie créée');
+}
+
+function renameCat(id, e) {
+  e.stopPropagation();
+  const cat = categories.find(c => c.id === id);
+  openModal('Renommer la catégorie', `
+    <div class="step-label">Nouveau nom</div>
+    <input class="modal-input" id="rename-input" value="${cat.name}" placeholder="Nom...">
+  `, async () => {
+    const v = document.getElementById('rename-input').value.trim();
+    if (!v) return;
+    cat.name = v;
+    await saveCategories();
+    renderCategories();
+    if (currentCat === id) document.getElementById('content-title').textContent = `${cat.icon} ${cat.name}`;
+    toast('Renommé');
+  });
+}
+
+function deleteCat(id, e) {
+  e.stopPropagation();
+  const cat = categories.find(c => c.id === id);
+  openModal(`Supprimer "${cat.name}" ?`, `<p style="color:var(--muted);font-size:14px;">Tous les fichiers de cette catégorie seront supprimés définitivement.</p>`, async () => {
+    // Supprimer fichiers DB
+    for (const fid of (cat.files || [])) { await dbDelete('files', fid); }
+    categories = categories.filter(c => c.id !== id);
+    if (currentCat === id) { currentCat = null; document.getElementById('file-grid').innerHTML = '<div class="empty-state"><div class="e-icon">🗂️</div><p>Sélectionnez une catégorie</p></div>'; document.getElementById('content-title').textContent = '— Sélectionnez une catégorie'; document.getElementById('add-file-btn').style.display = 'none'; }
+    await saveCategories();
+    renderCategories();
+    toast('Catégorie supprimée');
+  });
+}
+
+// ===== FICHIERS =====
+function getFileIcon(type, name) {
+  if (!type && name) {
+    const ext = name.split('.').pop().toLowerCase();
+    if (['jpg','jpeg','png','gif','webp','svg','bmp'].includes(ext)) return '🖼️';
+    if (['mp4','webm','avi','mov','mkv'].includes(ext)) return '🎬';
+    if (['pdf'].includes(ext)) return '📄';
+    if (['txt','md'].includes(ext)) return '📝';
+    if (['mp3','wav','ogg','flac'].includes(ext)) return '🎵';
+    if (['zip','rar','7z','tar'].includes(ext)) return '📦';
+    if (['exe','app','dmg'].includes(ext)) return '⚙️';
+    return '📁';
+  }
+  if (type && type.startsWith('image/')) return '🖼️';
+  if (type && type.startsWith('video/')) return '🎬';
+  if (type && type.startsWith('audio/')) return '🎵';
+  if (type === 'application/pdf') return '📄';
+  if (type && type.startsWith('text/')) return '📝';
+  return '📁';
+}
+
+function formatSize(bytes) {
+  if (!bytes) return '';
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/(1024*1024)).toFixed(1) + ' MB';
+}
+
+async function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result.split(',')[1]);
+    reader.onerror = () => reject(new Error('Lecture échouée'));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function addFile() {
+  if (!currentCat) return;
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.multiple = true;
+  input.onchange = async () => {
+    const cat = categories.find(c => c.id === currentCat);
+    const files = Array.from(input.files);
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      try {
+        toast('⏳ ' + (i+1) + '/' + files.length + ' — ' + file.name);
+        // Petite pause pour laisser le navigateur respirer
+        await new Promise(r => setTimeout(r, 50));
+        const b64 = await fileToBase64(file);
+        await new Promise(r => setTimeout(r, 50));
+        const encData = await encrypt(JSON.stringify({ data: b64, type: file.type, name: file.name }), vaultPw);
+        await new Promise(r => setTimeout(r, 50));
+        const id = 'f_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+        await dbPut('files', { id, enc: encData });
+        const meta = { id, name: file.name, type: file.type, size: file.size, date: Date.now(), fav: false, catId: currentCat };
+        cat.files = cat.files || [];
+        cat.files.push(meta);
+        await saveCategories();
+        renderCategories();
+        renderFiles();
+        toast('✓ ' + file.name + ' ajouté !');
+      } catch(err) {
+        toast('❌ Erreur: ' + file.name);
+        console.error(err);
+      }
+    }
+  };
+  input.click();
+}
+
+async function renderFiles() {
+  if (!currentCat && !trashMode) return;
+  const grid = document.getElementById('file-grid');
+  grid.innerHTML = '';
+  const search = document.getElementById('search-input').value.toLowerCase();
+
+  let files = [];
+  if (trashMode) {
+    files = await dbGetAll('trash');
+    files = files.map(f => ({ ...f.meta, _trashId: f.id }));
+  } else {
+    const cat = categories.find(c => c.id === currentCat);
+    files = [...(cat?.files || [])];
+  }
+
+  if (search) files = files.filter(f => f.name.toLowerCase().includes(search));
+  if (favFilterOn && !trashMode) files = files.filter(f => f.fav);
+
+  if (sortMode === 'name') files.sort((a, b) => a.name.localeCompare(b.name));
+  else files.sort((a, b) => b.date - a.date);
+
+  if (favFilterOn && !trashMode) {
+    const favs = files.filter(f => f.fav);
+    const rest = files.filter(f => !f.fav);
+    files = [...favs, ...rest];
+  }
+
+  if (files.length === 0) {
+    grid.innerHTML = `<div class="empty-state"><div class="e-icon">${trashMode ? '🗑️' : '📭'}</div><p>${trashMode ? 'Corbeille vide' : 'Aucun fichier'}</p></div>`;
+    return;
+  }
+
+  files.forEach(f => {
+    const el = document.createElement('div');
+    el.className = 'file-item';
+    if (trashMode) {
+      el.innerHTML = `
+        <span class="file-icon">${getFileIcon(f.type, f.name)}</span>
+        <div class="file-name">${f.name}</div>
+        <div class="file-meta">${formatSize(f.size)}</div>
+        <button class="del-btn" onclick="restoreFile('${f._trashId}',event)" title="Restaurer">↩️</button>
+        <button class="fav-star" onclick="permDelete('${f._trashId}',event)" title="Supprimer définitivement">💀</button>
+      `;
+    } else {
+      el.innerHTML = `
+        <button class="del-btn" onclick="moveToTrash('${f.id}',event)" title="Supprimer">🗑️</button>
+        <span class="file-icon">${getFileIcon(f.type, f.name)}</span>
+        <div class="file-name">${f.name}</div>
+        <div class="file-meta">${formatSize(f.size)}</div>
+        <button class="fav-star ${f.fav ? 'active' : ''}" onclick="toggleFav('${f.id}',event)" title="Favori">⭐</button>
+      `;
+      el.addEventListener('click', () => openFile(f.id, f.name, f.type));
+    }
+    grid.appendChild(el);
+  });
+}
+
+async function openFile(id, name, type) {
+  resetInactivity();
+  const rec = await dbGet('files', id);
+  if (!rec) { toast('Fichier introuvable'); return; }
+  toast('Déchiffrement...');
+  const json = await decrypt(rec.enc, vaultPw);
+  if (!json) { toast('Erreur de déchiffrement'); return; }
+  const { data, type: ftype, name: fname } = JSON.parse(json);
+  const realType = ftype || type;
+  const url = `data:${realType};base64,${data}`;
+
+  document.getElementById('viewer-title').textContent = fname || name;
+  const vc = document.getElementById('viewer-content');
+  vc.innerHTML = '';
+
+  // Remove old save btn
+  const oldSave = document.getElementById('note-save-btn');
+  if (oldSave) oldSave.remove();
+
+  if (realType && realType.startsWith('image/')) {
+    const img = document.createElement('img');
+    img.src = url;
+    vc.appendChild(img);
+  } else if (realType && realType.startsWith('video/')) {
+    const vid = document.createElement('video');
+    vid.src = url; vid.controls = true; vid.style.maxWidth = '90vw';
+    vc.appendChild(vid);
+  } else if (realType && realType.startsWith('audio/')) {
+    const aud = document.createElement('audio');
+    aud.src = url; aud.controls = true;
+    vc.appendChild(aud);
+  } else if (realType === 'application/pdf') {
+    const iframe = document.createElement('iframe');
+    iframe.src = url;
+    vc.appendChild(iframe);
+  } else if (realType && realType.startsWith('text/')) {
+    const raw = atob(data);
+    const div = document.createElement('div');
+    div.className = 'text-view'; div.textContent = raw;
+    vc.appendChild(div);
+  } else if (fname && fname.endsWith('.txt')) {
+    const raw = atob(data);
+    const div = document.createElement('div');
+    div.className = 'text-view'; div.textContent = raw;
+    vc.appendChild(div);
+  } else {
+    // Téléchargement
+    const a = document.createElement('a');
+    a.href = url; a.download = fname || name;
+    a.className = 'pw-btn';
+    a.style = 'display:inline-block;padding:14px 28px;text-decoration:none;border-radius:8px;background:var(--red);color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;letter-spacing:2px;';
+    a.textContent = '⬇️ Télécharger ' + (fname || name);
+    vc.appendChild(a);
+  }
+
+  // Note editor (txt/notes)
+  const cat = categories.find(c => c.id === currentCat);
+  if (cat && (cat.name === 'Notes' || (realType && realType.startsWith('text/')))) {
+    currentNoteId = id;
+    const raw = atob(data);
+    vc.innerHTML = '';
+    const ta = document.createElement('textarea');
+    ta.className = 'note-editor'; ta.value = raw;
+    vc.appendChild(ta);
+    const saveBtn = document.createElement('button');
+    saveBtn.id = 'note-save-btn'; saveBtn.className = 'viewer-save-btn';
+    saveBtn.textContent = '💾 Sauvegarder';
+    saveBtn.onclick = async () => {
+      const newData = btoa(unescape(encodeURIComponent(ta.value)));
+      const encData = await encrypt(JSON.stringify({ data: newData, type: 'text/plain', name: fname || name }), vaultPw);
+      await dbPut('files', { id, enc: encData });
+      toast('Note sauvegardée ✓');
+    };
+    document.body.appendChild(saveBtn);
+  }
+
+  document.getElementById('viewer').classList.add('show');
+}
+
+function closeViewer() {
+  document.getElementById('viewer').classList.remove('show');
+  document.getElementById('viewer-content').innerHTML = '';
+  const sb = document.getElementById('note-save-btn');
+  if (sb) sb.remove();
+  currentNoteId = null;
+}
+
+async function moveToTrash(id, e) {
+  e.stopPropagation();
+  const cat = categories.find(c => c.id === currentCat);
+  const meta = cat.files.find(f => f.id === id);
+  const rec = await dbGet('files', id);
+  await dbPut('trash', { id, meta, enc: rec?.enc });
+  await dbDelete('files', id);
+  cat.files = cat.files.filter(f => f.id !== id);
+  await saveCategories();
+  renderCategories();
+  renderFiles();
+  toast('Déplacé vers la corbeille');
+}
+
+async function restoreFile(id, e) {
+  e.stopPropagation();
+  const rec = await dbGet('trash', id);
+  if (!rec) return;
+  await dbPut('files', { id, enc: rec.enc });
+  await dbDelete('trash', id);
+  // Restaurer dans catégorie
+  const cat = categories.find(c => c.id === (rec.meta?.catId || currentCat)) || categories[0];
+  if (cat) { cat.files = cat.files || []; cat.files.push(rec.meta); }
+  await saveCategories();
+  renderFiles();
+  toast('Fichier restauré ✓');
+}
+
+async function permDelete(id, e) {
+  e.stopPropagation();
+  openModal('Supprimer définitivement ?', '<p style="color:var(--muted);font-size:14px;">Cette action est irréversible.</p>', async () => {
+    await dbDelete('trash', id);
+    renderFiles();
+    toast('Supprimé définitivement');
+  });
+}
+
+function showTrash() {
+  trashMode = true;
+  currentCat = null;
+  document.getElementById('content-title').textContent = '🗑️ Corbeille';
+  document.getElementById('add-file-btn').style.display = 'none';
+  renderFiles();
+}
+
+async function toggleFav(id, e) {
+  e.stopPropagation();
+  const cat = categories.find(c => c.id === currentCat);
+  const f = cat.files.find(f => f.id === id);
+  if (f) { f.fav = !f.fav; await saveCategories(); renderFiles(); }
+}
+
+function toggleFavFilter() {
+  favFilterOn = !favFilterOn;
+  document.getElementById('fav-filter-btn').classList.toggle('active', favFilterOn);
+  renderFiles();
+}
+
+function sortFiles(mode) { sortMode = mode; renderFiles(); }
+
+// ===== EXPORT / IMPORT =====
+async function showExport() {
+  const allFiles = await dbGetAll('files');
+  const exportData = { categories, files: allFiles, version: 1, date: Date.now() };
+  const json = JSON.stringify(exportData);
+  const encExport = await encrypt(json, vaultPw);
+  const blob = new Blob([encExport], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'coffre_backup_' + new Date().toISOString().slice(0,10) + '.vault';
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('Export créé ✓');
+}
+
+function showImport() {
+  const input = document.createElement('input');
+  input.type = 'file'; input.accept = '.vault';
+  input.onchange = async () => {
+    const file = input.files[0];
+    const reader = new FileReader();
+    reader.onload = async () => {
+      const enc = reader.result;
+      const json = await decrypt(enc, vaultPw);
+      if (!json) { toast('Impossible de déchiffrer — mauvais mot de passe ?'); return; }
+      try {
+        const data = JSON.parse(json);
+        categories = data.categories || [];
+        for (const f of (data.files || [])) await dbPut('files', f);
+        await saveCategories();
+        renderCategories();
+        toast('Import réussi ✓');
+      } catch { toast('Fichier invalide'); }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+
+// ===== MODAL =====
+function openModal(title, body, action) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-body').innerHTML = body;
+  modalAction = action;
+  document.getElementById('modal').classList.add('show');
+}
+
+function closeModal() { document.getElementById('modal').classList.remove('show'); modalAction = null; }
+function modalConfirm() { if (modalAction) modalAction(); closeModal(); }
+
+// ===== INACTIVITÉ =====
+function resetInactivity() {
+  inactivityLeft = inactivitySeconds;
+  document.getElementById('inactivity-fill').style.width = '100%';
+}
+
+function startInactivityTimer() {
+  stopInactivityTimer();
+  inactivityInterval = setInterval(() => {
+    inactivityLeft--;
+    const pct = (inactivityLeft / inactivitySeconds) * 100;
+    document.getElementById('inactivity-fill').style.width = pct + '%';
+    if (inactivityLeft <= 0) lockVault();
+  }, 1000);
+}
+
+function stopInactivityTimer() {
+  if (inactivityInterval) clearInterval(inactivityInterval);
+}
+
+document.addEventListener('mousemove', () => { if (vaultPw) resetInactivity(); });
+document.addEventListener('keydown', () => { if (vaultPw) resetInactivity(); });
+document.addEventListener('touchstart', () => { if (vaultPw) resetInactivity(); });
+
+// ===== TOAST =====
+let toastTimer;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+// ===== MOBILE =====
+function toggleSidebar() {
+  const sb = document.querySelector('.sidebar');
+  const ov = document.getElementById('sidebar-overlay');
+  sb.classList.toggle('open');
+  ov.classList.toggle('show');
+}
+
+function toggleMobileFav() {
+  favFilterOn = !favFilterOn;
+  renderFiles();
+  toast(favFilterOn ? '⭐ Favoris activés' : 'Tous les fichiers');
+}
+
+function showMobileMenu() {
+  openModal('Menu', '<div style="display:flex;flex-direction:column;gap:10px;"><button class="modal-btn" onclick="closeModal();showExport()">📤 Exporter</button><button class="modal-btn" onclick="closeModal();showImport()">📥 Importer</button><button class="modal-btn" onclick="closeModal();showTrash()">🗑️ Corbeille</button><button class="modal-btn confirm" onclick="closeModal();lockVault()">🔒 Verrouiller</button></div>', null);
+  document.getElementById('modal-confirm').style.display = 'none';
+}
+
+function checkMobile() {
+  const fab = document.getElementById('fab-add');
+  if (fab) fab.style.display = window.innerWidth <= 700 && currentCat ? 'flex' : 'none';
+}
+window.addEventListener('resize', checkMobile);
+
+const _origSelectCat = window.selectCat;
+
+// ===== INIT =====
+(async () => {
+  await initDB();
+  checkFirstTime();
+  checkMobile();
+})();
+</script>
+</body>
+</html>
